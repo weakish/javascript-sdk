@@ -54,7 +54,7 @@ describe('User', function() {
     });
 
     it('should loginWithEmail', () =>
-      AV.User.loginWithEmail(email, password).then(function(user) {
+      AV.User.loginWithEmail(email, 'wrong password').then(function(user) {
         expect(user.get('username')).to.be(username);
       }));
   });
